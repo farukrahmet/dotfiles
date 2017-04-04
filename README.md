@@ -60,6 +60,7 @@ The installation instructions are coming soon... (WIP)
         $ vim
 
 * For each editor execute `:PlugInstall` command.
+install ripgrep and ag via brew
 
 ## Plugins List
 
