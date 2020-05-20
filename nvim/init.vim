@@ -111,13 +111,12 @@ endif
 " if !has("gui_running")
 "   set t_Co=256
 " endif
-
-set termguicolors
-if $ITERM_PROFILE =~? 'light'
-  colorscheme solarized8_light
-else
-  colorscheme solarized8_dark
-endif
+syntax on
+let g:solarized_termcolors=256
+set t_Co=256
+set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized8
 
 syntax sync minlines=256
 highlight clear VertSplit
@@ -336,3 +335,30 @@ let g:gutentags_ctags_executable = '/usr/local/bin/ctags'
 if filereadable(glob('~/.config/nvim/keybindings.vim'))
   source ~/.config/nvim/keybindings.vim
 endif
+" Default value is "normal", Setting this option to "high" or "low" does use the
+" same Solarized palette but simply shifts some values up or down in order to
+" expand or compress the tonal range displayed.
+let g:neosolarized_contrast = "normal"
+
+" Special characters such as trailing whitespace, tabs, newlines, when displayed
+" using ":set list" can be set to one of three levels depending on your needs.
+" Default value is "normal". Provide "high" and "low" options.
+let g:neosolarized_visibility = "normal"
+
+" I make vertSplitBar a transparent background color. If you like the origin
+" solarized vertSplitBar style more, set this value to 0.
+let g:neosolarized_vertSplitBgTrans = 1
+
+" If you wish to enable/disable NeoSolarized from displaying bold, underlined
+" or italicized" typefaces, simply assign 1 or 0 to the appropriate variable.
+" Default values:
+let g:neosolarized_bold = 1
+let g:neosolarized_underline = 1
+let g:neosolarized_italic = 0
+
+" Used to enable/disable "bold as bright" in Neovim terminal. If colors of bold
+" text output by commands like `ls` aren't what you expect, you might want to
+" try disabling this option. Default value:
+let g:neosolarized_termBoldAsBright = 1
+nnoremap <silent> <C-p><C-p> :NERDTreeToggle<CR>
+colorscheme NeoSolarized

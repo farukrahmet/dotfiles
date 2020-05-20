@@ -76,4 +76,8 @@ Plug 'racer-rust/vim-racer', {'for': 'rust'}
 " go lang
 Plug 'fatih/vim-go', {'for': 'go'}
 
+
+" faro
+Plug 'iCyMind/NeoSolarized'
+Plug 'scrooloose/nerdtree'
 call plug#end()
